@@ -38,6 +38,9 @@ async function saveProduitToSession(idProduit, quantite) {
 		body: JSON.stringify(prod),
 	});
 	const response = await getConn.json();
+	// mise à jour du nombre de produits du panier dans le header
+	const keysPanier = Object.keys(response);
+	panierQte.textContent = keysPanier.length;
 }
 
 // async function getPanier(id) {
