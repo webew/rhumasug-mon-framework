@@ -1,4 +1,4 @@
-# WEBEW PHP Framework
+# RhumaSug avec PHP Framework
 
 ## Créer une nouvelle page
 
