@@ -17,6 +17,7 @@ class PanierService
 
         if ($qtite == 0) {
             unset($_SESSION["panier"][$key]);
+            // TODO : unset $_SESSION["panier"] quand panier vide
         } else {
             $_SESSION["panier"][$key] = $qtite;
         }
@@ -26,7 +27,7 @@ class PanierService
 
     public static function produitsBddToSession()
     {
-        $stmt = Bdd::getInstance()->prepare("SELECT * FROM vue_vente_contenir_produits WHERE vente.idUser = ? AND vente.etat=0");
+        $stmt = Bdd::getInstance()->prepare("SELECT * FROM vue_vente_contenir_produits WHERE idUser = ? AND etat=0");
         $stmt->execute([
             $_SESSION["idUser"]
         ]);

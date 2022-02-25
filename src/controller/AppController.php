@@ -77,6 +77,8 @@ class AppController extends AbstractController
 
             // on redirige vers la page d'origine
             NavigationService::getPreviousPage();
+        } else {
+            header("location:accueil");
         }
     }
 
